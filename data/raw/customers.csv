@@ -1,0 +1,201 @@
+customer_id,name,region,signup_date
+CUST-0001,Linda Smith,Asia-Pacific,2023-05-06
+CUST-0002,Joseph Jones,North America,2023-12-13
+CUST-0003,Paul Williams,Latin America,2023-01-17
+CUST-0004,Mary Williams,Europe,2023-04-30
+CUST-0005,Steven Martin,North America,2023-10-15
+CUST-0006,Richard Thompson,Latin America,2023-04-23
+CUST-0007,Mark Jackson,Asia-Pacific,2023-01-04
+CUST-0008,William Thompson,Latin America,2023-06-24
+CUST-0009,Sarah Jones,Europe,2023-06-22
+CUST-0010,Michael Williams,Latin America,2023-02-19
+CUST-0011,Daniel Ramirez,Asia-Pacific,2023-11-06
+CUST-0012,Thomas Sanchez,North America,2023-08-24
+CUST-0013,Paul Brown,Latin America,2023-02-10
+CUST-0014,Emily Martinez,Asia-Pacific,2023-10-23
+CUST-0015,Richard Thompson,North America,2023-01-24
+CUST-0016,Joseph Harris,Asia-Pacific,2023-02-10
+CUST-0017,Joseph Ramirez,North America,2023-07-14
+CUST-0018,Sarah Anderson,Asia-Pacific,2023-03-25
+CUST-0019,Lisa Lopez,Europe,2023-12-10
+CUST-0020,Sarah Thompson,North America,2023-11-08
+CUST-0021,William Moore,Europe,2023-03-25
+CUST-0022,Sandra Gonzalez,Asia-Pacific,2023-11-24
+CUST-0023,Emily Davis,Asia-Pacific,2023-01-29
+CUST-0024,Joseph Clark,North America,2023-06-11
+CUST-0025,Betty Rodriguez,North America,2023-04-19
+CUST-0026,Andrew Lewis,Asia-Pacific,2023-04-19
+CUST-0027,Ashley Gonzalez,Latin America,2023-03-15
+CUST-0028,Thomas Jones,Europe,2023-10-15
+CUST-0029,Paul Rodriguez,Latin America,2023-10-26
+CUST-0030,Betty Lopez,Europe,2023-03-12
+CUST-0031,Steven Thomas,North America,2023-01-25
+CUST-0032,Linda Jones,Europe,2023-12-15
+CUST-0033,Margaret Martin,USA,2023-07-17
+CUST-0034,Matthew Martin,Latin America,2023-09-28
+CUST-0035,Thomas Moore,North America,2023-12-15
+CUST-0036,Linda Perez,Asia-Pacific,2023-11-25
+CUST-0037,Nancy Brown,Asia-Pacific,2023-08-11
+CUST-0038,William Anderson,United States,2023-05-15
+CUST-0039,Steven Harris,Europe,2023-09-17
+CUST-0040,Michael Ramirez,Asia-Pacific,2023-11-24
+CUST-0041,Steven Martin,Europe,2023-03-20
+CUST-0042,Lisa Harris,Europe,2023-10-04
+CUST-0043,Kimberly Robinson,North America,2023-11-03
+CUST-0044,Christopher Thomas,North America,2023-02-27
+CUST-0045,Lisa Lewis,Asia-Pacific,2023-05-03
+CUST-0046,Patricia Davis,North America,2023-02-13
+CUST-0047,Ashley Clark,North America,2023-09-30
+CUST-0048,David Jones,Latin America,2023-10-09
+CUST-0049,William Rodriguez,Latin America,2023-04-19
+CUST-0050,Paul Harris,Europe,2023-06-09
+CUST-0051,Betty Perez,Asia-Pacific,2023-08-13
+CUST-0052,Kimberly Anderson,USA,2023-05-07
+CUST-0053,Joseph Williams,Asia-Pacific,2023-01-11
+CUST-0054,Donna Moore,Europe,2023-10-29
+CUST-0055,Joseph Smith,North America,2023-12-29
+CUST-0056,Patricia Davis,North America,2023-01-17
+CUST-0057,Nancy Williams,Europe,2023-05-23
+CUST-0058,Ashley Miller,Europe,2023-10-20
+CUST-0059,Andrew Thomas,Europe,2023-08-31
+CUST-0060,Anthony Miller,U.S.A.,2023-02-19
+CUST-0061,Margaret Lopez,Latin America,2023-07-30
+CUST-0062,Sandra Ramirez,North America,2023-12-11
+CUST-0063,Michael Johnson,Latin America,2023-06-23
+CUST-0064,Michael Davis,Europe,2023-04-08
+CUST-0065,Paul Anderson,Europe,2023-08-05
+CUST-0066,Barbara Rodriguez,Latin America,2023-05-08
+CUST-0067,John Anderson,U.S.A.,2023-01-26
+CUST-0068,Paul Clark,North America,2023-02-17
+CUST-0069,Jessica Garcia,Latin America,2023-09-06
+CUST-0070,Donald Miller,Latin America,2023-01-31
+CUST-0071,William Gonzalez,USA,2023-07-19
+CUST-0072,Thomas Robinson,Latin America,2023-05-27
+CUST-0073,Margaret Thompson,Latin America,2023-03-21
+CUST-0074,Richard Martinez,Europe,2023-01-30
+CUST-0075,Donna White,North America,2023-06-10
+CUST-0076,Patricia Johnson,Latin America,2023-09-15
+CUST-0077,Kimberly Garcia,North America,2023-09-18
+CUST-0078,Jennifer Ramirez,Europe,2023-02-05
+CUST-0079,Joshua Williams,Europe,2023-07-26
+CUST-0080,Linda Walker,Europe,2023-10-24
+CUST-0081,Joshua Johnson,North America,2023-08-03
+CUST-0082,Donna Jackson,Asia-Pacific,2023-05-14
+CUST-0083,Susan Perez,Asia-Pacific,2023-05-03
+CUST-0084,Thomas Gonzalez,Europe,2023-12-10
+CUST-0085,Karen Anderson,Asia-Pacific,2023-02-07
+CUST-0086,James Anderson,North America,2023-02-07
+CUST-0087,Paul Miller,Asia-Pacific,2023-03-09
+CUST-0088,Daniel Lewis,USA,2023-05-06
+CUST-0089,Lisa Martinez,Europe,2023-08-13
+CUST-0090,Paul Thompson,Asia-Pacific,2023-11-10
+CUST-0091,Kimberly Smith,Asia-Pacific,2023-12-06
+CUST-0092,Michael Walker,Europe,2023-05-16
+CUST-0093,Linda Lewis,U.S.A.,2023-10-11
+CUST-0094,Elizabeth Rodriguez,Asia-Pacific,2023-11-06
+CUST-0095,Susan Thompson,Asia-Pacific,2023-04-15
+CUST-0096,Thomas Taylor,Latin America,2023-05-09
+CUST-0097,Patricia Williams,Latin America,2023-05-22
+CUST-0098,Robert Smith,Asia-Pacific,2023-03-08
+CUST-0099,Thomas Garcia,Latin America,2023-10-10
+CUST-0100,Margaret Moore,United States,2023-02-27
+CUST-0101,John Walker,Europe,2023-10-07
+CUST-0102,Robert Clark,Asia-Pacific,2023-10-26
+CUST-0103,Emily Jones,Latin America,2023-03-07
+CUST-0104,Robert Martinez,Asia-Pacific,2023-01-21
+CUST-0105,Daniel Miller,Europe,2023-12-08
+CUST-0106,Michael Lopez,Latin America,2023-11-14
+CUST-0107,Elizabeth Robinson,Europe,2023-03-25
+CUST-0108,Barbara Lewis,Latin America,2023-01-13
+CUST-0109,Barbara White,Asia-Pacific,2023-07-30
+CUST-0110,Jessica Rodriguez,Europe,2023-12-26
+CUST-0111,Michael Gonzalez,United States,2023-08-29
+CUST-0112,Joseph Miller,Latin America,2023-06-29
+CUST-0113,Karen Clark,Europe,2023-04-25
+CUST-0114,Mary Perez,Europe,2023-07-24
+CUST-0115,Nancy Rodriguez,North America,2023-05-23
+CUST-0116,Daniel Lee,Latin America,2023-12-14
+CUST-0117,Paul Hernandez,USA,2023-03-01
+CUST-0118,Thomas Garcia,Asia-Pacific,2023-01-20
+CUST-0119,Michael Martin,Latin America,2023-06-26
+CUST-0120,Christopher Wilson,North America,2023-07-17
+CUST-0121,Andrew Miller,Asia-Pacific,2023-01-23
+CUST-0122,Margaret Smith,Europe,2023-07-06
+CUST-0123,Margaret Williams,Asia-Pacific,2023-11-16
+CUST-0124,Christopher Perez,North America,2023-06-03
+CUST-0125,Steven Martinez,Latin America,2023-06-17
+CUST-0126,Betty Thompson,Asia-Pacific,2023-10-11
+CUST-0127,David Miller,Latin America,2023-12-07
+CUST-0128,Matthew Perez,Europe,2023-11-12
+CUST-0129,Andrew Martinez,Latin America,2023-10-08
+CUST-0130,James Martinez,Asia-Pacific,2023-04-18
+CUST-0131,Margaret Sanchez,Asia-Pacific,2023-08-27
+CUST-0132,Mark Anderson,Europe,2023-09-19
+CUST-0133,Donald Sanchez,Europe,2023-12-04
+CUST-0134,Jennifer Martinez,Asia-Pacific,2023-02-17
+CUST-0135,Jessica Perez,Asia-Pacific,2023-04-26
+CUST-0136,Richard Jones,North America,2023-01-24
+CUST-0137,Jessica Thomas,North America,2023-08-22
+CUST-0138,Anthony Lewis,Europe,2023-12-23
+CUST-0139,Matthew Thomas,Latin America,2023-05-05
+CUST-0140,Elizabeth Lee,North America,2023-02-24
+CUST-0141,Margaret Davis,Europe,2023-12-23
+CUST-0142,Kimberly Anderson,United States,2023-10-13
+CUST-0143,Jessica Robinson,North America,2023-08-22
+CUST-0144,David Sanchez,Latin America,2023-12-08
+CUST-0145,Kimberly Moore,Asia-Pacific,2023-08-15
+CUST-0146,Michelle Clark,Latin America,2023-10-08
+CUST-0147,Mark Lewis,Europe,2023-09-01
+CUST-0148,Mark Rodriguez,Europe,2023-11-23
+CUST-0149,Sarah Harris,Latin America,2023-11-17
+CUST-0150,Jessica Rodriguez,Latin America,2023-02-09
+CUST-0151,Charles Davis,Asia-Pacific,2023-06-21
+CUST-0152,Christopher Lewis,North America,2023-03-12
+CUST-0153,Elizabeth Davis,Latin America,2023-12-22
+CUST-0154,Elizabeth Thompson,Europe,2023-02-02
+CUST-0155,Anthony Wilson,Asia-Pacific,2023-10-05
+CUST-0156,Sandra Wilson,North America,2023-04-16
+CUST-0157,Anthony Gonzalez,North America,2023-10-22
+CUST-0158,Matthew Thomas,United States,2023-06-30
+CUST-0159,Karen Harris,Latin America,2023-08-03
+CUST-0160,Paul White,Europe,2023-09-07
+CUST-0161,Joseph Rodriguez,Latin America,2023-09-06
+CUST-0162,Mary Gonzalez,Asia-Pacific,2023-12-09
+CUST-0163,Betty White,Europe,2023-08-28
+CUST-0164,David Martin,North America,2023-07-21
+CUST-0165,Donna Jackson,North America,2023-02-12
+CUST-0166,Margaret Jones,Latin America,2023-04-04
+CUST-0167,Patricia Rodriguez,Latin America,2023-06-17
+CUST-0168,Susan Anderson,Asia-Pacific,2023-06-22
+CUST-0169,Matthew Rodriguez,Latin America,2023-05-10
+CUST-0170,Jennifer Thomas,North America,2023-10-04
+CUST-0171,Patricia Walker,Asia-Pacific,2023-04-25
+CUST-0172,John Harris,United States,2023-01-16
+CUST-0173,Jessica Miller,USA,2023-11-15
+CUST-0174,Elizabeth Davis,Europe,2023-08-31
+CUST-0175,Linda Jackson,Europe,2023-08-27
+CUST-0176,Thomas Harris,Asia-Pacific,2023-03-27
+CUST-0177,Joshua Martin,North America,2023-03-25
+CUST-0178,Karen Brown,North America,2023-06-09
+CUST-0179,Andrew Perez,Latin America,2023-07-23
+CUST-0180,Richard Williams,Europe,2023-02-22
+CUST-0181,Karen Ramirez,North America,2023-10-17
+CUST-0182,Robert Lopez,Latin America,2023-12-05
+CUST-0183,Lisa Williams,Asia-Pacific,2023-01-07
+CUST-0184,Anthony Clark,Latin America,2023-02-24
+CUST-0185,Margaret Walker,Asia-Pacific,2023-11-22
+CUST-0186,Sandra Thompson,Europe,2023-08-11
+CUST-0187,Barbara White,Asia-Pacific,2023-11-12
+CUST-0188,Paul Harris,Latin America,2023-08-27
+CUST-0189,Margaret Clark,Asia-Pacific,2023-06-15
+CUST-0190,Jessica Clark,North America,2023-05-23
+CUST-0191,Mark Davis,Latin America,2023-10-19
+CUST-0192,Michelle Perez,Latin America,2023-06-22
+CUST-0193,Mary Thomas,Asia-Pacific,2023-04-04
+CUST-0194,Ashley Miller,Asia-Pacific,2023-05-13
+CUST-0195,Nancy Rodriguez,Asia-Pacific,2023-10-12
+CUST-0196,James Taylor,Europe,2023-02-13
+CUST-0197,Jessica White,Latin America,2023-09-08
+CUST-0198,Emily Harris,Europe,2023-12-20
+CUST-0199,Donald Lee,Latin America,2023-08-18
+CUST-0200,Mary Williams,Asia-Pacific,2023-04-24
