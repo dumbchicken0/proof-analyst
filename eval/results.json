@@ -1,0 +1,46 @@
+{
+  "summary": {
+    "timestamp": "2026-10-07T10:04:32.517799+00:00",
+    "total_questions": 2,
+    "accuracy": 1.0,
+    "re_run_success_rate": 1.0,
+    "correct_refusal_rate": 1.0,
+    "confident_wrong_rate": 0.0,
+    "correct_count": 2,
+    "confident_wrong_count": 0,
+    "refusal_expected_count": 1,
+    "correct_refusals": 1
+  },
+  "results": [
+    {
+      "id": "q01",
+      "question": "How many total registered customers are in the customers table?",
+      "traps": [],
+      "expected_verdict": "ANSWERED",
+      "actual_verdict": "ANSWERED",
+      "expected_value": 200.0,
+      "actual_value": 200.0,
+      "tolerance": 0.0,
+      "proof_reproduced": true,
+      "is_correct": true,
+      "is_confident_wrong": false,
+      "is_correct_refusal": false
+    },
+    {
+      "id": "q09",
+      "question": "What was the total net profit in USD across all completed orders in 2024?",
+      "traps": [
+        "unanswerable_missing_profit_cost"
+      ],
+      "expected_verdict": "REFUSED",
+      "actual_verdict": "REFUSED",
+      "expected_value": null,
+      "actual_value": null,
+      "tolerance": 0.0001,
+      "proof_reproduced": true,
+      "is_correct": true,
+      "is_confident_wrong": false,
+      "is_correct_refusal": true
+    }
+  ]
+}

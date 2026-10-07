@@ -51,75 +51,83 @@ def inject_traps(
     trap_stats["customer_region_variants"] = variant_count
 
     # ---------------------------------------------------------
-    # 2. Mixed date formats in orders.order_date
-    # Target: 140 provably DD/MM (day > 12), 85 ambiguous (day <= 12 and month <= 12)
+    # Partition order indices to prevent interference between traps:
+    # Set A: Date modifications
+    # Set B: Missing amount modifications
+    # Set C: Exact duplicates source
+    # Set D: Near duplicates source
     # ---------------------------------------------------------
-    provably_dd_indices = []
-    ambiguous_indices = []
+    
+    # 2. Date format trap partition
+    provably_dd_pool = []
+    ambiguous_pool = []
 
     for idx, row in df_orders.iterrows():
-        d = dt.date.fromisoformat(row["order_date"])
-        if d.day > 12:
-            provably_dd_indices.append((idx, d))
-        elif d.day <= 12 and d.month <= 12:
-            ambiguous_indices.append((idx, d))
+        try:
+            d = dt.date.fromisoformat(row["order_date"].strip())
+            if d.day > 12:
+                provably_dd_pool.append((idx, d))
+            elif d.day <= 12 and d.month <= 12:
+                ambiguous_pool.append((idx, d))
+        except Exception:
+            continue
 
-    rng.shuffle(provably_dd_indices)
-    rng.shuffle(ambiguous_indices)
+    rng.shuffle(provably_dd_pool)
+    rng.shuffle(ambiguous_pool)
 
-    provable_count = min(140, len(provably_dd_indices))
-    ambiguous_count = min(85, len(ambiguous_indices))
+    provable_count = 140
+    ambiguous_count = 85
 
-    for idx, d in provably_dd_indices[:provable_count]:
-        # Formatted as DD/MM/YYYY where day > 12 -> provably DD/MM
+    provably_dd_chosen = provably_dd_pool[:provable_count]
+    ambiguous_chosen = ambiguous_pool[:ambiguous_count]
+    date_modified_indices = set([idx for idx, _ in provably_dd_chosen] + [idx for idx, _ in ambiguous_chosen])
+
+    for idx, d in provably_dd_chosen:
         df_orders.loc[idx, "order_date"] = f"{d.day:02d}/{d.month:02d}/{d.year}"
 
-    for idx, d in ambiguous_indices[:ambiguous_count]:
-        # Formatted as DD/MM/YYYY where day <= 12 and month <= 12 -> ambiguous
+    for idx, d in ambiguous_chosen:
         df_orders.loc[idx, "order_date"] = f"{d.day:02d}/{d.month:02d}/{d.year}"
 
     trap_stats["provably_dd_mm_dates"] = provable_count
     trap_stats["ambiguous_dates"] = ambiguous_count
 
-    # ---------------------------------------------------------
-    # 3. Missing values in orders.amount: 24 NaN and 6 "N/A"
-    # To preserve clean ground truth for completed orders, plant missing
-    # values in cancelled/pending orders.
-    # ---------------------------------------------------------
-    non_completed_indices = df_orders[df_orders["status"].isin(["cancelled", "pending"])].index.tolist()
-    rng.shuffle(non_completed_indices)
-    
+    # 3. Missing amount trap partition
+    # Plant on non-completed orders that were NOT modified for dates
+    non_completed_pool = [
+        idx for idx, row in df_orders.iterrows()
+        if row["status"] in ["cancelled", "pending"] and idx not in date_modified_indices
+    ]
+    rng.shuffle(non_completed_pool)
+
     df_orders["amount"] = df_orders["amount"].astype("object")
 
-    # 24 NaN
-    nan_indices = non_completed_indices[:24]
+    nan_indices = non_completed_pool[:24]
     for idx in nan_indices:
         df_orders.loc[idx, "amount"] = np.nan
 
-    # 6 "N/A"
-    na_string_indices = non_completed_indices[24:30]
+    na_string_indices = non_completed_pool[24:30]
     for idx in na_string_indices:
         df_orders.loc[idx, "amount"] = "N/A"
 
     trap_stats["nan_amounts"] = len(nan_indices)
     trap_stats["na_string_amounts"] = len(na_string_indices)
+    amount_modified_indices = set(nan_indices + na_string_indices)
 
-    # ---------------------------------------------------------
-    # 4. Duplicate orders
-    # Target: 37 exact duplicates + 12 near-duplicates (case/whitespace in order_id)
-    # ---------------------------------------------------------
-    candidate_indices = df_orders.index.tolist()
-    rng.shuffle(candidate_indices)
+    # 4. Duplicates partition: pick untouched rows
+    untouched_indices = [
+        idx for idx in df_orders.index
+        if idx not in date_modified_indices and idx not in amount_modified_indices
+    ]
+    rng.shuffle(untouched_indices)
 
     # 37 exact duplicates
-    exact_dup_indices = candidate_indices[:37]
+    exact_dup_indices = untouched_indices[:37]
     exact_dup_rows = df_orders.loc[exact_dup_indices].copy()
 
-    # 12 near duplicates (6 lowercase, 6 whitespace padded)
-    near_dup_indices = candidate_indices[37:49]
+    # 12 near duplicates
+    near_dup_indices = untouched_indices[37:49]
     near_dup_rows = df_orders.loc[near_dup_indices].copy()
-    
-    # Modify near duplicate order_id
+
     near_dup_records = near_dup_rows.to_dict("records")
     for i, record in enumerate(near_dup_records):
         original_oid = record["order_id"]
@@ -129,10 +137,10 @@ def inject_traps(
             record["order_id"] = f"  {original_oid}  "
     df_near_dups = pd.DataFrame(near_dup_records)
 
-    # ---------------------------------------------------------
-    # 5. Orphan customer_ids
-    # Target: 9 orders referencing non-existent customer_ids
-    # ---------------------------------------------------------
+    trap_stats["exact_duplicate_rows"] = len(exact_dup_rows)
+    trap_stats["near_duplicate_rows"] = len(df_near_dups)
+
+    # 5. Orphan customer_ids: 9 orders
     orphan_rows = []
     for i in range(1, 10):
         orphan_cid = f"CUST-99{i:02d}"
@@ -146,15 +154,10 @@ def inject_traps(
             "status": "completed",
         })
     df_orphans = pd.DataFrame(orphan_rows)
-
-    trap_stats["exact_duplicate_rows"] = len(exact_dup_rows)
-    trap_stats["near_duplicate_rows"] = len(df_near_dups)
     trap_stats["orphan_customer_rows"] = len(df_orphans)
 
-    # Append all trapped rows into df_orders and shuffle deterministically
+    # Concatenate all orders and shuffle deterministically
     raw_orders = pd.concat([df_orders, exact_dup_rows, df_near_dups, df_orphans], ignore_index=True)
-    
-    # Deterministic re-ordering
     raw_orders = raw_orders.sample(frac=1.0, random_state=seed).reset_index(drop=True)
 
     raw_dfs = {
